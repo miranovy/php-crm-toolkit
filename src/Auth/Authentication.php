@@ -142,7 +142,7 @@ abstract class Authentication {
 		$newToken->securityToken = $securityDOM->saveXML( $securityDOM->getElementsByTagName( "RequestedSecurityToken" )->item( 0 )->firstChild );
 
 		$expiryTime           = $securityDOM->getElementsByTagName( "RequestSecurityTokenResponse" )->item( 0 )->getElementsByTagName( 'Expires' )->item( 0 )->textContent;
-		$newToken->expiryTime = Client::parseTime( substr( $expiryTime, 0, - 1 ), '%Y-%m-%dT%H:%M:%S' );
+		$newToken->expiryTime = Client::parseTime( substr( $expiryTime, 0, - 1 ), 'Y-m-d\TH:i:s' );
 
 		$this->client->logger->info( 'Issued a new ' . $service . ' security token - expires at: ' . date( 'r', $newToken->expiryTime ) );
 

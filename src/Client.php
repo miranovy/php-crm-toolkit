@@ -1724,7 +1724,7 @@ class Client extends AbstractClient {
                     break;
                 case 'dateTime':
                     $attributeValue = $keyValueNode->getElementsByTagName( 'value' )->item( 0 )->textContent;
-                    $attributeValue = self::parseTime( $attributeValue, '%Y-%m-%dT%H:%M:%SZ' );
+                    $attributeValue = self::parseTime( $attributeValue, 'Y-m-d\TH:i:sZ' );
                     break;
                 default:
                     $attributeValue = $keyValueNode->getElementsByTagName( 'value' )->item( 0 )->textContent;
