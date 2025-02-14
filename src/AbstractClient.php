@@ -24,6 +24,7 @@
 namespace AlexaCRM\CRMToolkit;
 
 use DateTime;
+use DateTimeZone;
 use DOMNodeList;
 use InvalidArgumentException;
 
@@ -212,7 +213,7 @@ abstract class AbstractClient implements ClientInterface
      */
     public static function parseTime($timestamp, $formatString)
     {
-        $datetime = DateTime::createFromFormat($formatString, $timestamp);
+        $datetime = DateTime::createFromFormat($formatString, $timestamp, new DateTimeZone('UTC'));
 
         if (false === $datetime) {
             throw new InvalidArgumentException(sprintf('Invalid datetime value %s for format %s', $timestamp, $formatString));

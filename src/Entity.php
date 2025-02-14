@@ -919,7 +919,7 @@ class Entity extends EntityReference {
                     case 'dateTime':
                         /* Date/Time - Parse this into a PHP Date/Time */
                         //$storedValue = date("m/d/y", self::parseTime($attributeValue, '%Y-%m-%dT%H:%M:%SZ'));
-                        $dateTimeFormat = 'Y-m-d\TH:i:sZ';
+                        $dateTimeFormat = 'Y-m-d\TH:i:s\Z';
                         if ( $this->attributes[ $attributeKey ]->dateTimeBehavior === 'DateOnly' ||
                              $this->attributes[ $attributeKey ]->dateTimeBehavior === 'TimeZoneIndependent' ) {
                             $dateTimeFormat = 'Y-m-d\TH:i:s'; // dateonly and tzi do not have timezone information
