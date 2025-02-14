@@ -29,7 +29,7 @@ class ClientTest extends TestCase
     {
         yield [
             'value' => '2019-01-01T00:00:00Z',
-            'format' => 'Y-m-d\TH:i:sZ',
+            'format' => 'Y-m-d\TH:i:s\Z',
             'timestamp' => 1546300800,
         ];
 
