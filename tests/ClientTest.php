@@ -34,6 +34,12 @@ class ClientTest extends TestCase
         ];
 
         yield [
+            'value' => '2025-02-14T10:41:16Z',
+            'format' => 'Y-m-d\TH:i:s\Z',
+            'timestamp' => 1739529676,
+        ];
+
+        yield [
             '2019-01-01T00:00:00',
             'Y-m-d\TH:i:s',
             1546300800,
