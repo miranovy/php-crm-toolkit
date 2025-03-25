@@ -645,7 +645,7 @@ class Entity extends EntityReference {
 
                         $valueNode = $propertyNode->appendChild( $entityDOM->createElement( 'c:value' ) );
 
-                        if ( $this->propertyValues[ $property ]['Value'] ) {
+                        if ( isset($this->propertyValues[ $property ]['Value']) ) {
                             $valueNode->setAttribute( 'i:type', 'b:Money' );
                             $valueNode->appendChild( $entityDOM->createElement( 'b:Value', $this->propertyValues[ $property ]['Value'] ) );
                         } else {
@@ -762,7 +762,7 @@ class Entity extends EntityReference {
                             $valueNode->appendChild( $xmlValueChild );
                         }
                         /* If there is a value, set it */
-                        if ( $xmlValue != null ) {
+                        if ( $xmlValue !== null ) {
                             $valueNode->appendChild( new DOMText( $xmlValue ) );
                         } elseif ( is_null( $xmlValueChild ) ) {
                             $valueNode->setAttribute( 'i:nil', 'true' );
